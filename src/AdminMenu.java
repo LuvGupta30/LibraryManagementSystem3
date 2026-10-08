@@ -72,14 +72,14 @@ public class AdminMenu {
                 case 2 -> {
                     int id = inputHandler.readInt("Enter ID: ");
 
-                    boolean removed = memberDAO.removeMember(id);
-
                     Member member = memberDAO.getMemberById(id);
 
                     if(member == null){
                         System.out.println("Member does not exist!");
                         break;
                     }
+
+                    boolean removed = memberDAO.removeMember(id);
 
                     if(removed){
                         System.out.println("Member removed successfully!");
